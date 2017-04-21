@@ -11,20 +11,21 @@ import org.testng.annotations.Test;
 
 public class IphoneSearch {
 
-
     @Test
     public void navigateToRozetkaWebSiteAndSearchForIPhone() {
 
-        System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.get("http://rozetka.com.ua/");
-        WebElement searchField = driver.findElement(By.cssSelector(".header-search-input-text"));
-        searchField.clear();
-        searchField.sendKeys("iPhone 6");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        WebElement searchButton = driver.findElement(By.cssSelector(".btn-link-i"));
-        searchButton.click();
+    	 System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
+         WebDriver driver = new FirefoxDriver();
+         driver.manage().window().maximize();
+         driver.get("http://rozetka.com.ua/");
+         WebElement searchField = driver.findElement(By.cssSelector(".rz-header-search-input-text"));
+         searchField.clear();
+         searchField.sendKeys("iPhone 6");
+         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+         WebElement searchButton = driver.findElement(By.cssSelector(".btn-link-i"));
+         searchButton.click();
 
-    }
+     }
+
+
 }
